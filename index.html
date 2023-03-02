@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Count</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #c2c2c2;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="text" id="text" cols="50" rows="20"></textarea>
+    <p>0</p>
+    <script>
+      const text = document.querySelector("#text");
+      const p = document.querySelector("p");
+      text.addEventListener("keydown", () => {
+        render();
+      });
+      function render() {
+        if (text.value === "") {
+          p.textContent = "0";
+        } else if(text.value.length === 0){    
+            p.textContent = "1";
+        } else {
+          p.textContent = text.value.trim().length + 1;
+        }
+      }
+    </script>
+  </body>
+</html>
